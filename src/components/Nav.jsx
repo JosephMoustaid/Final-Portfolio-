@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from '../assets/images/logo.png';
 
+import { Link } from 'react-router-dom';
 function Nav() {
   return (
     <nav className="navbar navbar-expand-md ms-md-3 content container-fluid" id="nav">
@@ -27,24 +28,16 @@ function Nav() {
         <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto mb-lg-0 text-center text-md-end list-inline">
             <li className="nav-item px-md-1">
-              <a href="" className="nav-link  navLinks" aria-current="page">
-                Home
-              </a>
+              <Link to="/" className="nav-link  navLinks" aria-current="page">Home</Link>
             </li>
             <li className="nav-item px-md-1">
-              <a href="#techStack" className="nav-link navLinks">
-                TechStack
-              </a>
+              <Link to="/#texhstack" className="nav-link  navLinks" aria-current="page">TechStack</Link>
             </li>
             <li className="nav-item px-md-1">
-              <a href="#projects" className="nav-link  navLinks">
-                Projects
-              </a>
+              <Link to="/#projects" className="nav-link  navLinks" aria-current="page">Projects</Link>
             </li>
             <li className="nav-item px-md-1">
-              <a href="#About" className="nav-link  navLinks">
-                About
-              </a>
+              <Link to="/about" className="nav-link  navLinks" aria-current="page">About</Link>
             </li>
             <li className="nav-item px-md-1">
               <a href="mailto:MoustaidYoussef@emsi-edu.ma" className="nav-link navLinks">
@@ -52,9 +45,7 @@ function Nav() {
               </a>
             </li>
             <li className="nav-item px-md-1">
-              <a href="blog" className="nav-link navLinks">
-                Blog
-              </a>
+              <Link to="/blog" className="nav-link  navLinks" aria-current="page">Blog</Link>
             </li>
           </ul>
         </div>

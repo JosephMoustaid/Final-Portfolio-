@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "hoempage" : "https://JosephMoustaid.github.io/Final-Portfolio-",
+  "hoempage": "https://josephmoustaid.github.io/Final-Portfolio-/",
   "dependencies": {
     "@react-three/drei": "^9.121.2",
     "@react-three/fiber": "^8.17.12",
@@ -19,7 +19,7 @@
     "react-icons": "^5.4.0",
     "react-native-web": "^0.19.13",
     "react-router-dom": "^6.28.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "react-tsparticles": "^2.12.2",
     "react-type-animation": "^3.2.0",
     "react-typed": "^2.0.12",
@@ -29,7 +29,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "npm run build && gh-pages -d build" ,
     "sass": "sass src/scss/main.scss src/css/style.css --watch",
     "start": "react-scripts start",
     "build": "react-scripts build",

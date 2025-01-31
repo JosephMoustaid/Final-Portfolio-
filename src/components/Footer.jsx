@@ -2,6 +2,9 @@ import React from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../css/style.css'; // Ensure your SCSS is compiled into CSS and imported properly.
 
+import { Link } from 'react-router-dom';
+
+
 function Footer() {
   return (
     <footer id="footer" className="bd-footer content h-50 ">
@@ -76,12 +79,12 @@ function Footer() {
               <li>
                 <h4 className="sec-title about__titles--tiltle">Resources</h4>
               </li>
-              <li><a href="#home" className="info">Home</a></li>
-              <li><a href="#techStack" className="info">TechStack</a></li>
-              <li><a href="#projects" className="info">Projects</a></li>
-              <li><a href="#experience" className="info">Experience</a></li>
-              <li><a href="#About" className="info">About</a></li>
-              <li><a href="#Services" className="info">Services</a></li>
+              <li><Link to="/" className='info'>Home</Link></li>
+              <li><Link to="/#techstack" className='info'>TechStack</Link></li>
+              <li><Link to="/#projects" className='info'>Projects</Link></li>
+              <li><Link to="/#experience" className='info'>Experience</Link></li>
+              <li><Link to="/about" className='info'>About</Link></li>
+              <li><Link to="/services" className='info'>Services</Link></li>
               <li><a href="mailto:MoustaidYoussef@emsi-edu.ma" className="info">Contact</a></li>
             </ul>
           </div>
