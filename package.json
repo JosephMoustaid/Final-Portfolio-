@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "hoempage" : "https://JosephMoustaid.github.io/Final-Portfolio-",
   "dependencies": {
     "@react-three/drei": "^9.121.2",
     "@react-three/fiber": "^8.17.12",
@@ -27,6 +28,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "sass": "sass src/scss/main.scss src/css/style.css --watch",
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -52,6 +55,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "sass": "^1.81.0"
   }
 }
