@@ -1,0 +1,29 @@
+
+  .cursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999; /* Ensure it's above other content */
+  }
+  
+  .cursor__circle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid white;
+    transform: translateX(-60%);
+  }
+  
+  .cursor__point {
+    position: absolute;
+    background-color: white;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    transform: translateX(-34px);
+
+  }
+  @media (max-width: 768px) {
+    /* Deactivate cursor animation at this breakpoint */
+  }
+  

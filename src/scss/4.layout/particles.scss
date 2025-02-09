@@ -1,0 +1,155 @@
+$spacing: 2560px;
+$time01: 60s;
+$time02: 120s;
+$time03: 180s;
+$time04: 400s;
+
+@function particles($max) {
+    $val: 0 0 white;
+    @for $i from 1 through $max {
+      $x: random($spacing) + px;
+      $y: random($spacing) + px;
+      $size: random(3) + 1 + px; // Random size between 1px and 4px
+      $color: rgba(255, 255, 255, random(100) / 100); // Random opacity
+      $val: #{$val}, #{$x} #{$y} #{$size} #{$color};
+    }
+    @return $val;
+  }
+  
+  @mixin particles($max) {
+    box-shadow: particles($max);
+  }
+  
+  @keyframes particles {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY($spacing * -1);
+    }
+  }
+  
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5; // Random twinkle effect
+    }
+  }
+  
+.particles{
+
+    .space {
+        z-index: 1;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        background: transparent;
+      }
+      .particle,
+      .particle::after {
+        background: transparent;
+      }
+      .particle::after {
+        position: absolute;
+        content: '';
+        top: $spacing;
+      }
+      .particle {
+        &:nth-child(1) {
+          &,
+          &::after {
+            @include particles(600);
+            width: 1px;
+            height: 1px;
+          }
+          animation: particles $time01 linear infinite;
+        }
+        &:nth-child(2) {
+          &,
+          &::after {
+            @include particles(200);
+            width: 2px;
+            height: 2px;
+          }
+          animation: particles $time02 linear infinite;
+        }
+        &:nth-child(3) {
+          &,
+          &::after {
+            @include particles(100);
+            width: 3px;
+            height: 3px;
+          }
+          animation: particles $time03 linear infinite;
+        }
+        &:nth-child(4) {
+          &,
+          &::after {
+            @include particles(400);
+            width: 2px;
+            height: 2px;
+          }
+          animation: particles $time04 linear infinite;
+        }
+      }
+
+ 
+}
+
+.stars-particles{
+    .stars{
+        @keyframes starsAnimation 
+        {
+            from {
+                left: -100px;
+            }
+            to {
+                left: calc( 100% + 100px );
+            }
+        }
+
+        z-index: 1;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+
+        .p{
+
+        position:relative;
+        left:0px;
+        top:50px;
+        width:150px;
+        height:150px;
+        background-color:white;
+        position:fixed;
+        animation-name:starsAnimation;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        }
+        .p::before{
+        position:absolute;
+        display:block;
+        content:"";
+        width:100px;
+        right:1px;
+        top:0px;
+        height:1px;
+        background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(255,255,255,0.4) 100%); 
+        }
+        .p-1{
+        animation-duration:10s;
+        }
+        .p-2{
+        animation-duration:5s;
+        top:60%;
+        }
+        .p-3{
+        animation-duration:20s;
+        top:90%;
+        }
+      } 
+}
+     
